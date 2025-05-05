@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - VTU Quiz</title>
+    <style>
+        body {
+            background-color: #eaeaf6;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 600px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #512888;
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li {
+            background-color: #fdb913;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            color: #000;
+            font-weight: bold;
+            text-align: center;
+        }
+        a {
+            color: #512888;
+            text-decoration: none;
+        }
+        .logout {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="logout"><a href="/logout">Logout</a></div>
+    <h2>Available Quizzes</h2>
+    <ul>
+        {% for quiz in quizzes %}
+            <li><a href="/quiz/{{ quiz.quizID }}">{{ quiz.title }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>

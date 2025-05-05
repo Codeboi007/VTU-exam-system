@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+    <style>
+        body {
+            background-color: #fffdf5;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 700px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.15);
+        }
+        h2 {
+            color: #512888;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question h4 {
+            margin-bottom: 10px;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        input[type="submit"] {
+            background-color: #512888;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Quiz</h2>
+    <form method="POST">
+        {% for q in questions %}
+            <div class="question">
+                <h4>{{ q.text }}</h4>
+                {% for ans in q.answers %}
+                    <label><input type="radio" name="q{{ q.questionID }}" value="{{ ans.answerID }}"> {{ ans.text }}</label><br>
+                {% endfor %}
+            </div>
+        {% endfor %}
+        <input type="submit" value="Submit Quiz">
+    </form>
+</div>
+</body>
+</html>
