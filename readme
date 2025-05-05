@@ -1,0 +1,91 @@
+Here’s a clean, student-style `README.md` file for your **VTU-based Quiz Management System using Flask**, covering all important details without looking like a copied project:
+
+---
+
+```markdown
+# VTU Online Exam System 🧠🎓
+
+A simple web-based quiz system built using Flask, SQLAlchemy, and MySQL, designed for academic use (BCS403 DBMS Mini Project). It allows students to register, attempt quizzes, get scored, and view leaderboards.
+
+---
+
+## 💡 Features
+
+- ✅ Student Registration and Login
+- 📋 Create and Store Quizzes
+- ❓ Add Questions and Answers with correctness tagging
+- 📝 Attempt Quiz and Auto-Evaluation
+- 📊 Real-time Score Calculation
+- 🏆 Leaderboard Display after submission
+
+---
+
+## 🛠️ Technologies Used
+
+- **Backend:** Python, Flask, SQLAlchemy
+- **Frontend:** HTML, CSS (VTU theme)
+- **Database:** MySQL (phpMyAdmin/XAMPP)
+
+---
+
+## 📁 Project Structure
+
+```
+
+/project
+│
+├── templates/
+│   ├── login.html
+│   ├── register.html
+│   ├── quiz.html
+│   └── result.html
+│
+├── static/ (optional for CSS)
+│
+├── main.py            # Main Flask App
+├── database.py        # SQLAlchemy Models
+├── config.py          # DB Config
+├── sql\online_exam.sql       # Database schema + seed data
+└── README.md
+
+````
+
+---
+
+## ⚙️ How to Run
+
+1. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+````
+
+2. Import `vtu_quiz.sql` into your MySQL database.
+
+3. Update `config.py` with your MySQL credentials:
+
+   ```python
+   app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost/quiz_db'
+   ```
+
+4. Run the Flask app:
+
+   ```bash
+   python main.py
+   ```
+
+5. Open in browser: [http://localhost:5000](http://localhost:5000)
+
+
+## 🧪 SQL Concepts Used (for BCS403)
+
+* ✅ `CREATE`, `INSERT`, `SELECT`, `UPDATE`, `DELETE`
+* ✅ `JOIN`, `GROUP BY`, `ORDER BY`
+* ✅ `PRIMARY KEY`, `FOREIGN KEY`, constraints
+* ✅ Form handling with `POST`
+* ✅ Aggregation: score calculation
+
+
+## 📌 Note
+
+Make sure XAMPP is running and your MySQL DB is active before starting the Flask app.
+
